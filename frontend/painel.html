@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#111827">
+  <link rel="manifest" href="/manifest.json">
+  <link rel="stylesheet" href="/style.css">
+  <title>Painel | Clínica</title>
+</head>
+<body>
+  <header class="topbar">
+    <div>
+      <strong>Clínica</strong>
+      <span class="topbar-subtitle" id="usuarioLogado">Área protegida</span>
+    </div>
+    <button class="secondary small" onclick="logout()">Sair</button>
+  </header>
+
+  <main class="dashboard">
+    <section class="hero">
+      <div>
+        <span class="eyebrow">Painel</span>
+        <h1>Médicos e pacientes</h1>
+        <p>Cadastre, consulte, edite e remova registros.</p>
+      </div>
+      <button class="primary action-button" onclick="listar()">Atualizar lista</button>
+    </section>
+
+    <nav class="tabs">
+      <button id="tab-medicos" class="tab active" onclick="trocarAba('medicos')">Médicos</button>
+      <button id="tab-pacientes" class="tab" onclick="trocarAba('pacientes')">Pacientes</button>
+    </nav>
+
+    <section class="grid-dashboard">
+      <section class="card">
+        <h2 id="tituloForm">Novo médico</h2>
+        <div id="formCampos"></div>
+        <button class="primary" id="btnSalvar" onclick="salvar()">Cadastrar</button>
+        <button class="secondary" id="btnCancelar" onclick="cancelarEdicao()" hidden>Cancelar edição</button>
+        <p id="statusCrud" class="message"></p>
+      </section>
+
+      <section class="card users-card">
+        <div class="section-title">
+          <div>
+            <h2 id="tituloLista">Médicos cadastrados</h2>
+            <p class="muted">Dados carregados pela API protegida.</p>
+          </div>
+        </div>
+        <div id="lista" class="user-list"></div>
+      </section>
+    </section>
+  </main>
+
+  <script src="/painel.js"></script>
+</body>
+</html>

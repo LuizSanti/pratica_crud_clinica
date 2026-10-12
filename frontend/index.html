@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#111827">
+  <link rel="manifest" href="/manifest.json">
+  <link rel="stylesheet" href="/style.css">
+  <title>Login | Clínica</title>
+</head>
+<body>
+  <main class="auth-page">
+    <section class="auth-container">
+      <div class="brand">
+        <span class="brand-badge">APP</span>
+        <h1>CRUD de Usuários</h1>
+      </div>
+
+      <div class="auth-grid">
+        <section class="card">
+          <h2>Entrar</h2>
+          <p class="muted">Use seu e-mail e senha para acessar o sistema.</p>
+
+          <form onsubmit="event.preventDefault(); login();">
+            <label for="emailLogin">E-mail</label>
+            <input
+              id="emailLogin"
+              type="email"
+              placeholder="email@exemplo.com"
+              required
+            >
+
+            <label for="senhaLogin">Senha</label>
+            <input
+              id="senhaLogin"
+              type="password"
+              placeholder="Sua senha"
+              required
+            >
+
+            <button class="primary" type="submit">Entrar</button>
+          </form>
+
+          <p id="statusLogin" class="message"></p>
+        </section>
+
+        <section class="card">
+          <h2>Criar conta</h2>
+          <p class="muted">Crie um acesso ao sistema.</p>
+
+          <label for="nomeCadastro">Nome</label>
+          <input id="nomeCadastro" placeholder="Seu nome">
+
+          <label for="emailCadastro">E-mail</label>
+          <input
+            id="emailCadastro"
+            type="email"
+            placeholder="email@exemplo.com"
+          >
+
+          <label for="senhaCadastro">Senha</label>
+          <input
+            id="senhaCadastro"
+            type="password"
+            placeholder="Crie uma senha"
+          >
+
+          <label for="roleCadastro">Perfil</label>
+          <select id="roleCadastro">
+            <option value="user">Usuário (somente consulta)</option>
+            <option value="admin">Administrador (cadastra, edita e exclui)</option>
+          </select>
+
+          <button onclick="cadastrar()">Cadastrar</button>
+          <p id="statusCadastro" class="message"></p>
+        </section>
+      </div>
+    </section>
+  </main>
+
+  <script src="/auth.js"></script>
+</body>
+</html>
